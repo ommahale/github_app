@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:github_app/screens/home.dart';
+import 'package:github_app/screens/loading.dart';
+import 'package:github_app/screens/results.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
@@ -20,7 +22,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'My Github App',
       theme: ThemeData.dark(),
-      home: const HomeScreen(),
+      routes: {
+        "/": (context) => const HomeScreen(),
+        "/loading": (context) => const LoadingScreen(),
+        "/result": (context) => const ResultScreen(),
+      },
+      initialRoute: '/',
     );
   }
 }

@@ -18,19 +18,22 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     final inputBorder =
         OutlineInputBorder(borderSide: Divider.createBorderSide(context));
-    return TextField(
-      controller: textEditingController,
-      decoration: InputDecoration(
-        prefixIcon: Icon(iconData),
-        hintText: hintText,
-        border: inputBorder,
-        focusedBorder: inputBorder,
-        enabledBorder: inputBorder,
-        filled: true,
-        contentPadding: const EdgeInsets.all(8),
+    return SizedBox(
+      width: 300,
+      child: TextField(
+        controller: textEditingController,
+        decoration: InputDecoration(
+          prefixIcon: Icon(iconData),
+          hintText: hintText,
+          border: inputBorder,
+          focusedBorder: inputBorder,
+          enabledBorder: inputBorder,
+          filled: true,
+          contentPadding: const EdgeInsets.all(8),
+        ),
+        keyboardType: textInputType,
+        obscureText: isPass,
       ),
-      keyboardType: textInputType,
-      obscureText: isPass,
     );
   }
 }

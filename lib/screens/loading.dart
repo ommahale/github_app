@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
-class LoadinScreen extends StatefulWidget {
-  const LoadinScreen({super.key});
+class LoadingScreen extends StatefulWidget {
+  const LoadingScreen({super.key});
 
   @override
-  State<LoadinScreen> createState() => _LoadinScreenState();
+  State<LoadingScreen> createState() => _LoadingScreenState();
 }
 
-class _LoadinScreenState extends State<LoadinScreen> {
+class _LoadingScreenState extends State<LoadingScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    String data = ModalRoute.of(context)!.settings.arguments as String;
+    return const Scaffold(
+      body: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
   }
 }
