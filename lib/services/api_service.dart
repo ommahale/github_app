@@ -1,20 +1,33 @@
 import 'dart:convert';
-import 'dart:io';
-
+import 'package:github_app/models/user_models.dart';
 import 'package:http/http.dart';
 
 class ApiService {
   final String username;
   ApiService({required this.username});
-  late Map<String, dynamic> userData;
 
-  Future<void> getData() async {
+  Future<UserModel> getData() async {
     try {
       Response res = await get(
-        Uri.parse('https://api.github.com/users/${username}'),
+        Uri.parse('https://api.github.com/users/$username'),
       );
       Map data = jsonDecode(res.body);
-      print(data['avatar_url']);
-    } catch (e) {}
+      UserModel temp = UserModel(
+        username: data["login"],
+        profileUrl: data["avatar_url"],
+        location: data["location"],
+        bio: data["bio"],
+      );
+      print(temp);
+      return temp;
+    } catch (e) {
+      UserModel temp = UserModel(
+        username: "Some error occured",
+        profileUrl: "",
+        location: e.toString(),
+        bio: e.runtimeType.toString(),
+      );
+      return temp;
+    }
   }
 }
