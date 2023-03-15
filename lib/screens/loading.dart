@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:github_app/models/user_models.dart';
 import 'package:github_app/services/api_service.dart';
 
 class LoadingScreen extends StatefulWidget {
@@ -11,7 +12,16 @@ class LoadingScreen extends StatefulWidget {
 class _LoadingScreenState extends State<LoadingScreen> {
   void setData(String data) async {
     final apiService = ApiService(username: data);
-    await apiService.getData();
+    UserModel dataModel = await apiService.getData();
+    goToRes(dataModel);
+  }
+
+  void goToRes(UserModel data) {
+    Navigator.pushReplacementNamed(
+      context,
+      '/result',
+      arguments: data,
+    );
   }
 
   @override

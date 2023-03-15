@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:github_app/screens/loading.dart';
 import 'package:github_app/shared/custom_input.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -39,6 +38,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 hintText: 'Search your username',
                 textInputType: TextInputType.name,
                 iconData: Icons.search,
+              ),
+              const SizedBox(
+                height: 20,
               ),
               ElevatedButton(
                   onPressed: () => Navigator.pushNamed(
