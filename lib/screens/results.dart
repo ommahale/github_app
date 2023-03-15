@@ -13,22 +13,24 @@ class ResultScreen extends StatelessWidget {
         title: Text(model.username),
         centerTitle: true,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            backgroundImage: NetworkImage(model.profileUrl),
-            radius: 60,
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          Text(
-            model.bio,
-            textAlign: TextAlign.center,
-          )
-        ],
+      body: Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CircleAvatar(
+              backgroundImage: NetworkImage(model.profileUrl),
+              radius: 60,
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Text(
+              model.bio,
+              textAlign: TextAlign.center,
+            )
+          ],
+        ),
       ),
     );
   }
