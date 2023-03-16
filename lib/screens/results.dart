@@ -10,7 +10,13 @@ class ResultScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text(model.username),
+        title: Text(
+            model.username.toUpperCase(),
+          style: const TextStyle(
+            fontWeight: FontWeight.w200,
+            fontSize: 21
+          ),
+        ),
         centerTitle: true,
       ),
       body: Center(
@@ -20,7 +26,18 @@ class ResultScreen extends StatelessWidget {
           children: [
             CircleAvatar(
               backgroundImage: NetworkImage(model.profileUrl),
-              radius: 60,
+              radius: 200,
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const Text(
+              " GitHub Bio ",
+              textAlign: TextAlign.left,
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const SizedBox(
               height: 30,
@@ -28,6 +45,10 @@ class ResultScreen extends StatelessWidget {
             Text(
               model.bio,
               textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 21,
+                fontWeight: FontWeight.w200,
+              ),
             )
           ],
         ),
