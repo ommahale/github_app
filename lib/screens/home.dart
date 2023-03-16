@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const CircleAvatar(
                 radius: 200,
                 backgroundImage: NetworkImage(
-                    "https://media.wired.com/photos/5955c62d5992c54331ac19b4/master/w_2560%2Cc_limit/inspectocat.jpg"),
+                    "https://octodex.github.com/images/droidtocat.png"),
               ),
               const SizedBox(
                 height: 30,
