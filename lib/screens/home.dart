@@ -26,29 +26,44 @@ class _HomeScreenState extends State<HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const CircleAvatar(
-                radius: 100,
+                radius: 200,
                 backgroundImage: NetworkImage(
-                    "https://octodex.github.com/images/droidtocat.png"),
+                    "https://media.wired.com/photos/5955c62d5992c54331ac19b4/master/w_2560%2Cc_limit/inspectocat.jpg"),
               ),
               const SizedBox(
                 height: 30,
               ),
               CustomTextField(
                 textEditingController: searchText,
-                hintText: 'Search your username',
+                hintText: 'Enter The Username',
                 textInputType: TextInputType.name,
                 iconData: Icons.search,
               ),
               const SizedBox(
                 height: 20,
               ),
-              ElevatedButton(
+              /*ElevatedButton(
                   onPressed: () => Navigator.pushNamed(
                         context,
                         '/loading',
                         arguments: searchText.text,
                       ),
-                  child: const Text('Show result'))
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.blueGrey,
+                  onPrimary: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(7), // Rounded corners
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Padding
+                ),
+                  child: const Text(
+                      'Search',
+                    style: TextStyle(
+                        fontSize: 21,
+                      fontWeight: FontWeight.w200,
+                    ),
+                  ),
+              )*/
             ],
           ),
         ),
