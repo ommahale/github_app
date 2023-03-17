@@ -11,7 +11,7 @@ class ResultScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         title: Text(
-            model.username.toUpperCase(),
+            model.name.toUpperCase(),
           style: const TextStyle(
             fontWeight: FontWeight.w200,
             fontSize: 21

@@ -17,6 +17,7 @@ class ApiService {
         profileUrl: data["avatar_url"],
         location: data["location"],
         bio: data["bio"],
+        name: data["name"],
       );
       print(temp);
       return temp;
@@ -26,6 +27,7 @@ class ApiService {
         profileUrl: "",
         location: e.toString(),
         bio: e.runtimeType.toString(),
+        name: e.runtimeType.toString(),
       );
       return temp;
     }
